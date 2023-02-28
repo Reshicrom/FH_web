@@ -1,77 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Student Dashboard</title>
 </head>
-    <body style="background-color: #111D4A;">
-        <h1 style="color: #C2CAE8;align-content: center; text-align: center">
-            Student Dashboard
-        </h1>
-        <div class="container">
-            <table>
-                <tr>
-                    <td>
-                      <form action="" style="text-align: left">
-                            <input type="text" name="name" placeholder="Cis-Suche" required/>
-                            <input type="submit" name="submit"  value="Submit"/>
-                        </form>
-                    </td>
-                    <td class="center"> <!-- CSS sheet for auto l&r margin to center the table-->
-                        <h2 style="color: #C2CAE8">
-                            Datum
-                        </h2>
-                    </td>
-                    <td>
-                        <h2 style="color: #C2CAE8">
-                            Uhrzeit
-                        </h2>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="container">
-            <table style="background-color: #8380B6">
-                <tr>
-                    <th>
-                        <h2 style="color: #111D4A">
-                            To-do
-                        </h2>
-                    </th>
-                </tr>
-                <tr>
-                    <td>
-                        <form>
-                            <input type="checkbox" id="Task1" name="Task1" value="Task1">
-                                <label for="Task1" style="color:#111D4A">
-                                    Task 1
-                                </label>
-                        </form>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <form>
-                            <input type="checkbox" id="Task2" name="Task2" value="Task2">
-                                <label for="Task2" style="color:#111D4A">
-                                    Task 2
-                            </label>
-                        </form>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <form>
-                            <input type="checkbox" id="Task3" name="Task3" value="Task3">
-                            <label for="Task3" style="color:#111D4A">
-                                Task 3
-                            </label>
-                        </form>
-                    </td>
-                </tr>
-            </table>
-        </div>
+<body style="background-color: #111D4A;">
+<div id="header" class="container">
+    <h1 style="color: #C2CAE8;align-content: center; text-align: center">
+
+        Student Dashboard
+
+    </h1>
+</div>
 
 
-    </body>
+<div class="container" id="Nav">
+    <form style="text-align: left"> <!--action=""-->
+        <input type="text" name="name" placeholder="Cis-Suche" required>
+        <input type="submit" name="submit"  value="Submit">
+    </form>
+</div>
+<div class="container" id="Content">
+    <div id="Uhr" style="width: 100%; margin-left: 50%; margin-right: auto">
+        <h2 style="color: #C2CAE8">
+            Uhrzeit
+        </h2>
+    </div>
+    <div id="Datum" style="width:100%; margin-left: 50%; margin-right: auto">
+             <h2 style="color: #C2CAE8">
+                Datum
+            </h2>
+    </div>
+    <div id="Kalender">
+        <table style="margin-left: 95%; text-align: center; color: #111D4A; background-color: #8380B6">
+            <tr>
+                <th>
+                    Kalender
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <h4> Heute </h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    06:00------
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    10:00------
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    14:00------
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    18:00------
+                </td>
+            </tr>
+
+        </table>
+    </div>
+    <div id="ToDo">
+        <table>
+            <tr>
+                <td>
+                    <table style="background-color: #8380B6">
+                        <tr>
+                            <th style="color: #111D4A">
+
+                                To-do
+
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <form>
+                                    <input type="checkbox" id="Task1" name="Task1" value="Task1">
+                                    <label for="Task1" style="color:#111D4A">
+                                        Task 1
+                                    </label>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <form>
+                                    <input type="checkbox" id="Task2" name="Task2" value="Task2">
+                                    <label for="Task2" style="color:#111D4A">
+                                        Task 2
+                                    </label>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <form>
+                                    <input type="checkbox" id="Task3" name="Task3" value="Task3">
+                                    <label for="Task3" style="color:#111D4A">
+                                        Task 3
+                                    </label>
+                                </form>
+                            </td>
+                        </tr>
+                    </table>
+    </div>
+
+</div>
+</body>
 </html>
