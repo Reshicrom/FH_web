@@ -1,0 +1,36 @@
+
+body{
+    background: #074050;
+}
+
+h1{
+    color:#FBC513;
+    text-align: center;
+    font-size: 40px;
+}
+h2{
+    color:#FBC513;
+}
+
+h3{
+    color: #FBC513
+}
+
+#header{
+    border-bottom-style: double;
+    border-bottom-color: #56A3A6;
+    padding-bottom: 5px;
+}
+
+#ToDo{
+    border-color: #56A3A6;
+    border-style: groove;
+    width: 5%;
+}
+
+#Kalender{
+    border-color: #56A3A6;
+    border-style: groove;
+    width: 5%;
+    margin-left:95%;
+}
