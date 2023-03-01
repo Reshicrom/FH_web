@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
+    <link rel="stylesheet" href="/static/style/styles.css">
     <meta charset="UTF-8">
-    <title>Student Dashboard</title>
+    <title>Dashboard</title>
 </head>
-<body style="background-color: #111D4A;">
-<div id="header" class="container">
-    <h1 style="color: #C2CAE8;align-content: center; text-align: center">
+<body>
+<section id="header" class="container">
+    <h1>
 
         Student Dashboard
 
     </h1>
-</div>
+</section>
 
 
-<div class="container" id="Nav">
-    <form style="text-align: left"> <!--action=""-->
+<section class="container" id="Nav">
+    <form> <!--action=""-->
         <input type="text" name="name" placeholder="Cis-Suche" required>
         <input type="submit" name="submit"  value="Submit">
     </form>
-</div>
-<div class="container" id="Content">
-    <div id="Uhr" style="width: 100%; margin-left: 50%; margin-right: auto">
-        <h2 style="color: #C2CAE8">
+</section>
+<section class="container" id="Content">
+    <div id="Uhr">
+        <h2>
             Uhrzeit
         </h2>
     </div>
-    <div id="Datum" style="width:100%; margin-left: 50%; margin-right: auto">
-             <h2 style="color: #C2CAE8">
+    <div id="Datum">
+             <h2>
                 Datum
             </h2>
     </div>
     <div id="Kalender">
-        <table style="margin-left: 95%; text-align: center; color: #111D4A; background-color: #8380B6">
+        <table>
             <tr>
                 <th>
                     Kalender
@@ -67,12 +68,10 @@
         </table>
     </div>
     <div id="ToDo">
-        <table>
-            <tr>
-                <td>
-                    <table style="background-color: #8380B6">
+
+                    <table>
                         <tr>
-                            <th style="color: #111D4A">
+                            <th>
 
                                 To-do
 
@@ -82,35 +81,30 @@
                             <td>
                                 <form>
                                     <input type="checkbox" id="Task1" name="Task1" value="Task1">
-                                    <label for="Task1" style="color:#111D4A">
+                                    <label for="Task1">
                                         Task 1
                                     </label>
-                                </form>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <form>
                                     <input type="checkbox" id="Task2" name="Task2" value="Task2">
-                                    <label for="Task2" style="color:#111D4A">
+                                    <label for="Task2">
                                         Task 2
                                     </label>
-                                </form>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <form>
                                     <input type="checkbox" id="Task3" name="Task3" value="Task3">
-                                    <label for="Task3" style="color:#111D4A">
+                                    <label for="Task3">
                                         Task 3
                                     </label>
                                 </form>
                             </td>
                         </tr>
+
                     </table>
     </div>
+    <div id="Wetter">
+        <h3>Wetter</h3>
+    </div>
+    <div id="Fotos">
+        <h3>Fotos</h3>
+    </div>
 
-</div>
+</section>
 </body>
 </html>
