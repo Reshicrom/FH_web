@@ -3,25 +3,21 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dashboard</title>
+    <title>Student Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <!--<link rel="stylesheet" href="/static/style/styles.css">-->
-</head>
-<body>
+    <link rel="stylesheet" href="/static/style/styles.css">
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
+</head>
+<body onload="loadElements()">
+
 
 <section id="header" class="container-fluid">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-12">
                 <h1>
-
-                    Student Dashboard by David, Sejla & Jessica
-
+                    Student Dashboard by David, Jessica & Sejla
                 </h1>
             </div>
         </div>
@@ -37,19 +33,19 @@
                     <form>
                         <div class="input-group">
                             <input type="text" name="name" placeholder="Cis-Suche" required class="form-control">
-                            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" name="submit" class="btn btn-primary">Suche</button>
                         </div>
                     </form>
                 </div>
             </div>
             <div class="col-lg-8">
                 <div id="buttons" class="d-flex justify-content-end">
-                    <button class="btn btn-primary mx-2">Wetter</button>
-                    <button class="btn btn-primary mx-2">Uhrzeit</button>
-                    <button class="btn btn-primary mx-2">Datum</button>
-                    <button class="btn btn-primary mx-2">To-Do</button>
-                    <button class="btn btn-primary mx-2">Fotos</button>
-                    <button class="btn btn-primary mx-2">Kalender</button>
+                    <button class="btn btn-primary mx-2" onclick="HideWidget('Wetter')">Wetter</button>
+                    <button class="btn btn-primary mx-2" onclick="HideWidget('time')">Uhrzeit</button>
+                    <button class="btn btn-primary mx-2" onclick="HideWidget('time')">Datum</button>
+                    <button class="btn btn-primary mx-2" onclick="HideWidget('To-Do')">To-Do</button>
+                    <button class="btn btn-primary mx-2" onclick="HideWidget('Fotos')">Fotos</button>
+                    <button class="btn btn-primary mx-2" onclick="HideWidget('calendar')">Kalender</button>
                 </div>
             </div>
         </div>
@@ -60,91 +56,168 @@
 <section id="Content">
     <div class="row" id="Datum_Zeit">
         <div class="col-sm-4"></div>
-        <div class="col-sm-2">
+        <div class="col-sm-4">
             <div class="container" id="Uhr">
-                <h2>
-                    11:28
+                <h2 id="time" style="display: grid">
+
                 </h2>
-            </div>
-        </div>
-        <div class="col-sm-2">
-            <div class="container" id="Datum">
-                <h2>
-                    02.03.2023
-                </h2>
+
+
             </div>
         </div>
         <div class="col-sm-4"></div>
     </div>
 
-
-    <div class="row" id="Middle">
-        <div class="col-sm-2">
-            <div id="ToDo">
-                <h2>My To Do List</h2>
+    <div class="row">
+        <div class="col-md-12 col-lg-3" id="To-Do" style="display: grid">
+            <div id="myDIV" class="header">
+                <h2>To-Do</h2>
                 <input type="text" id="myInput" placeholder="Title...">
-                <span onclick="newElement()" class="addBtn">Add</span>
+                <span onclick="newElement()" class="addBtn" tabindex="0">&plus;</span>
             </div>
+
             <ul id="myUL">
-                <li>Hit the gym</li>
-                <li class="checked">Pay bills</li>
-                <li>Meet George</li>
-                <li>Buy eggs</li>
-                <li>Read a book</li>
-                <li>Organize office</li>
             </ul>
         </div>
-        <div class="col-sm-8"></div>
-        <div class="col-sm-2">
-            <div class="container" id="Kalender">
-                <table>
-                    <tr>
-                        <th>
-                            <h2>
-                                Kalender
-                            </h2>
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h4> Heute </h4>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            06:00------
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            10:00------
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            14:00------
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            18:00------
-                        </td>
-                    </tr>
+        <div class="col-lg-5 col-md" ></div>
+        <div class="col-lg-4 col-md-12">
+
+            <div id="calender" style="display: grid">
+                <h2>Kalender</h2>
+                <div class="cal_header">
+                    <span class="left button" id="prev"> &lang; </span>
+                    <span class="left hook"></span>
+                    <span class="month-year" id="label"> June 20&0 </span>
+                    <span class="right hook"></span>
+                    <span class="right button" id="next"> &rang; </span>
+                </div>
+                <table id="days">
+                    <td>sun</td>
+                    <td>mon</td>
+                    <td>tue</td>
+                    <td>wed</td>
+                    <td>thu</td>
+                    <td>fri</td>
+                    <td>sat</td>
+                </table>
+                <table class="curr">
+
+                    <tbody>
+
+                    <tr><td class="nil"></td><td class="nil"></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+
+                    <tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td class="today">11</td><td>12</td></tr>
+
+                    <tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
+
+                    <tr><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td></tr>
+
+                    <tr><td>27</td><td>28</td><td>29</td><td>30</td><td class="nil"></td><td class="nil"></td><td class="nil"></td></tr>
+
+                    </tbody>
 
                 </table>
+
+            </div>
+
+        </div>
+
+        <div class="container" id="Wetter" style="display: grid">
+
+            <header>
+                <h2>Choose a location</h2>
+
+                <form id="search-form">
+                    <label for="search-term">Search for a city or an area</label>
+
+                    <div class="form-row">
+                        <input type="text" placeholder="For example Barcelona." name="search-term" id="search-term"
+                               autofocus="">
+                        <button type="submit" class="Weather_Submit_Button btn-default w-5 py-0.5">Search</button>
+
+                    </div> <!-- form-row -->
+
+                    <p class="form-msg"></p>
+                </form>
+            </header>
+
+            <section>
+                <ul class="cities">
+                </ul>
+            </section>
+
+
+        </div>
+        <div class="container col-sm-2" id="Fotos" style="display: grid">
+            <div>
+                <h2> Fotos </h2>
+            </div>
+            <div class="Fotos_Container">
+
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <!-- data-bs-ride tells the carousel to start animating once the page has been refreshed.-->
+                    <div class="carousel-inner">
+
+                        <div class="carousel-item active">
+                            <div class="numbertext">1 / 3</div>
+                            <img src="Uncle.jpg" alt="Uncle saying: Uncle never leaves without sock."
+                                 style="width:20rem;height:20rem;">
+                            <div class="text">Uncle.</div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="numbertext">2 / 3</div>
+                            <img src="Stitch.jpg" alt="Blue alien holding a guitar." style="width:20rem;height:20rem;">
+                            <div class="text">Stitch.</div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="numbertext">3 / 3</div>
+                            <img src="Dr.Hamsterviel.jpg" alt="Alien Hamster laughing evily."
+                                 style="width:20rem;height:20rem;">
+                            <div class="text">Dr. Hamsterviel.</div>
+                        </div>
+
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                            data-bs-slide="prev"> <!--data-bs-target: Something to do with dropdown.-->
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                        <!--For example for keyboard users. Is displayed when it is focused.-->
+                    </button>
+
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                            data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+
+                </div>
+
+                <!-- defer needs to be here (only if this is in head), in order for the picture to be visible.-->
+
             </div>
         </div>
-    </div>
-
-
-    <div class="container" id="Wetter">
-        <h3>Wetter</h3>
-    </div>
-    <div class="container" id="Fotos">
-        <h3>Fotos</h3>
+        <div class="container col-sm-10" ></div>
     </div>
 
 </section>
+
+
+<script src="/static/JS/ToDo.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+<script src="/static/JS/Uhr.js"></script>
+<script src="/static/JS/HideWidget.js"></script>
+<script src="/static/JS/calendar.js"></script>
+<!--script src="/static/JS/Lightbox.js"></script-->
+<script src="/static/JS/Weather.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js'></script>
+<script src="/static/JS/DragNDrop.js"></script>
+<!-- make div dropable: ondrop="drop(event)" ondragover="allowDrop(event)" -->
+<!-- make draggable: draggable="true" ondragstart="drag(event)" -->
 
 </body>
 </html>
